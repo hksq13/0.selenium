@@ -1,9 +1,10 @@
 #from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-#from seleniumwire import webdriver
+from seleniumwire import webdriver
 import  time
 import random
 from fake_useragent import UserAgent
+from proxy_auth_data import login, password
 
 user_agents_list = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
@@ -27,7 +28,7 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument(f"user-agent={useragent.random}") 
 
 #set proxy
-options.add_argument("--proxy-server=138.128.90.54:8000")
+# options.add_argument("--proxy-server=138.128.90.54:8000")
 
 proxy_options = {
     "proxy" : {
@@ -36,8 +37,10 @@ proxy_options = {
 }
 
 
+# s = Service(executable_path=r"D:\python_today_practice\0.selenium\chromedriver\chromedriver.exe")
+# driver = webdriver.Chrome(service=s, options=options)
 s = Service(executable_path=r"D:\python_today_practice\0.selenium\chromedriver\chromedriver.exe")
-driver = webdriver.Chrome(service=s, options=options)
+driver = webdriver.Chrome(service=s, seleniumwire_options=proxy_options)
 
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
     'source': '''
@@ -63,7 +66,7 @@ try:
     # time.sleep(10)
     
     driver.get("https://2ip.ru")
-    time.sleep(5)
+    time.sleep(50)
     
     
 except Exception as ex:
