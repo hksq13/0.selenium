@@ -1,2 +1,4 @@
 chromedriver/proxy_auth_data.py
 chromedriver/test.py
+chromedriver/chromedriver.exe
+chromedriver/LICENSE.chromedriver
