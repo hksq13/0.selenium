@@ -7,7 +7,7 @@ options.add_argument("--disable-blink-features=AutomationControlled")
 # options.add_experimental_option("excludeSwitches", ["enable-automation"])
 # options.add_experimental_option('useAutomationExtension', False)
 
-s = Service(executable_path="D:\\python today practice\\0.selenium\\chromedriver\\chromedriver.exe")
+s = Service(executable_path=r"D:\python_today_practice\0.selenium\chromedriver\chromedriver.exe")
 driver = webdriver.Chrome(service=s, options=options)
 
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
