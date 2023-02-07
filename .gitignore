@@ -4,3 +4,4 @@ chromedriver/chromedriver.exe
 chromedriver/LICENSE.chromedriver
 chromedriver/__pycache__/proxy_auth_data.cpython-39.pyc
 chromedriver/auth_data.py
+chromedriver/__pycache__/auth_data.cpython-39.pyc
