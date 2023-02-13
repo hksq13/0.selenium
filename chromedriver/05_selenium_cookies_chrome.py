@@ -28,37 +28,37 @@ driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
 
 
 try:
-    # driver.get("https://vk.com")
-    # time.sleep(5)  
+    driver.get("https://vk.com")
+    time.sleep(5)  
   
-    # # email_input = driver.find_element(By.ID, 'index_email')
-    # email_input = driver.find_element(By.ID, 'index_email')
-    # email_input.clear()
-    # email_input.send_keys(vk_login)
-    # time.sleep(3)
-    # button_in = driver.find_element(By.CSS_SELECTOR,'[class="FlatButton FlatButton--primary FlatButton--size-l FlatButton--wide VkIdForm__button VkIdForm__signInButton"]')
-    # button_in.click()
-    # time.sleep(5)
-    # pass_in  = driver.find_element(By.NAME,'password')
-    # pass_in.clear()
-    # pass_in.send_keys(vk_password)
-    # time.sleep(2)
-    # button_pass = driver.find_element(By.CSS_SELECTOR,'[class="vkuiButton vkuiButton--sz-l vkuiButton--lvl-primary vkuiButton--clr-accent vkuiButton--aln-center vkuiButton--sizeY-compact vkuiButton--stretched vkuiTappable vkuiTappable--sizeX-regular vkuiTappable--hasHover vkuiTappable--hasActive vkuiTappable--mouse"]')
-    # button_pass.click()
-    # time.sleep(20)
-    
-    # # cookies 
-    # pickle.dump(driver.get_cookies(), open(f"{vk_login}_cookies", "wb"))
-    
-    driver.get("https://vk.com/")
+    email_input = driver.find_element(By.ID, 'index_email')
+    email_input.clear()
+    email_input.send_keys(vk_login)
+    time.sleep(3)
+    button_in = driver.find_element(By.CSS_SELECTOR,'[class="FlatButton FlatButton--primary FlatButton--size-l FlatButton--wide VkIdForm__button VkIdForm__signInButton"]')
+    button_in.click()
     time.sleep(5)
-    
-    for cookie in pickle.load(open(f"{vk_login}_cookies", "rb")):
-        driver.add_cookie(cookie)    
-    
+    pass_in  = driver.find_element(By.NAME,'password')
+    pass_in.clear()
+    pass_in.send_keys(vk_password)
     time.sleep(2)
-    driver.refresh()
-    time.sleep(10)
+    button_pass = driver.find_element(By.CSS_SELECTOR,'[class="vkuiButton vkuiButton--sz-l vkuiButton--lvl-primary vkuiButton--clr-accent vkuiButton--aln-center vkuiButton--sizeY-compact vkuiButton--stretched vkuiTappable vkuiTappable--sizeX-regular vkuiTappable--hasHover vkuiTappable--hasActive vkuiTappable--mouse"]')
+    button_pass.click()
+    time.sleep(20)
+    
+    # cookies 
+    pickle.dump(driver.get_cookies(), open(f"{vk_login}_cookies", "wb"))
+    
+    # driver.get("https://vk.com/")
+    # # time.sleep(5)
+    # driver.implicitly_wait(5)
+    
+    # for cookie in pickle.load(open(f"{vk_login}_cookies", "rb")):
+    #     driver.add_cookie(cookie)    
+    
+    # time.sleep(2)
+    # driver.refresh()
+    # time.sleep(10)
     
             
 except Exception as ex:
