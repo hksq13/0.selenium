@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import  time
 from selenium.webdriver.common.by import By
-from auth_data import vk_password, vk_login
+from auth_data import vk_login, vk_password
 
 
 #set options

@@ -4,4 +4,4 @@ chromedriver/chromedriver.exe
 chromedriver/LICENSE.chromedriver
 chromedriver/auth_data.py
 chromedriver/__pycache__/
-
+chromedriver/seleniumCookiesChrome.py
